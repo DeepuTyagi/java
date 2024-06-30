@@ -9,6 +9,7 @@ public class StringConversionCase {
         asciiValue('z');*/
 
         convertIntoLowerCase("NITIN");
+        convertIntoUpperCase("nitin");
     }
 
     private static int asciiValue(char input){
@@ -41,20 +42,20 @@ public class StringConversionCase {
     private static String convertIntoUpperCase(String inputStr){
         System.out.println("Input String = "+inputStr);
         char[] inputCharArray = inputStr.toCharArray();
-        char [] outPutCharAyyar = new char[inputStr.length()];
+        char [] outPutCharArray = new char[inputStr.length()];
         for (int i=0; i<inputCharArray.length;i++){
             int asciiVal = asciiValue(inputCharArray[i]);
-            if(asciiVal >= 97 && asciiVal <=122){
+            if(asciiVal >= 65 && asciiVal <=90){
                 //Its already small letter
-                System.out.println("Already small letter");
-                outPutCharAyyar[i] = inputCharArray[i];
+                System.out.println("Already in upper case");
+                outPutCharArray[i] = inputCharArray[i];
             }else{
-                int newAsciiVal = asciiVal + 32;
+                int newAsciiVal = asciiVal - 32;
                 char newChar = (char)newAsciiVal;
-                outPutCharAyyar[i] = newChar;
+                outPutCharArray[i] = newChar;
             }
         }
-        String output = String.valueOf(outPutCharAyyar);
+        String output = String.valueOf(outPutCharArray);
         System.out.println("Output String = "+output);
         return output;
     }
