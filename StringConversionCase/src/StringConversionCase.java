@@ -37,4 +37,25 @@ public class StringConversionCase {
         System.out.println("Output String = "+output);
         return output;
     }
+
+    private static String convertIntoUpperCase(String inputStr){
+        System.out.println("Input String = "+inputStr);
+        char[] inputCharArray = inputStr.toCharArray();
+        char [] outPutCharAyyar = new char[inputStr.length()];
+        for (int i=0; i<inputCharArray.length;i++){
+            int asciiVal = asciiValue(inputCharArray[i]);
+            if(asciiVal >= 97 && asciiVal <=122){
+                //Its already small letter
+                System.out.println("Already small letter");
+                outPutCharAyyar[i] = inputCharArray[i];
+            }else{
+                int newAsciiVal = asciiVal + 32;
+                char newChar = (char)newAsciiVal;
+                outPutCharAyyar[i] = newChar;
+            }
+        }
+        String output = String.valueOf(outPutCharAyyar);
+        System.out.println("Output String = "+output);
+        return output;
+    }
 }
